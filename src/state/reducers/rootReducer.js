@@ -1,6 +1,15 @@
-import initialState from '../store/initialState'
-const rootReducer = (store initialState) => {
- return state
-}
+import initialState from '../store/initialState';
+const rootReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'CHANGE_GREETING':
+      return {
+        ...state,
+        message: action.payload,
+      };
 
-export default rootReducer
+    default:
+      return state;
+  }
+};
+
+export default rootReducer;
